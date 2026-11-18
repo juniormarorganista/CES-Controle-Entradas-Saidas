@@ -1,0 +1,217 @@
+﻿CES - COMO AJUSTAR
+Versão 1.5.0
+
+Este arquivo explica o que dá para mudar no CES sem precisar de nada
+além do próprio programa. Nenhum passo daqui exige instalar coisa
+nenhuma nem pedir ajuda para a área de tecnologia.
+
+
+O QUE DÁ PARA MUDAR
+-------------------
+
+Direto na janela, sem abrir arquivo nenhum:
+
+   os quatro horários
+   a jornada
+   o tamanho da janela, arrastando o canto inferior direito
+   a posição da janela, arrastando a barra verde de cima
+   ligar e desligar os avisos de 15, 10 e 5 minutos
+
+Tudo isso o programa guarda sozinho. Não precisa fazer mais nada.
+
+Editando um arquivo de texto:
+
+   as cores da janela
+   os dois textos que aparecem no topo
+   o intervalo mínimo de almoço
+
+O resto do arquivo trata dessa segunda parte.
+
+
+ONDE FICAM OS ARQUIVOS
+----------------------
+
+1. Pressione a tecla Windows junto com a tecla R.
+
+2. Na janelinha que abrir, digite:
+
+      %APPDATA%\CES
+
+3. Pressione Enter. Vai abrir uma pasta.
+
+Dentro dela há uma pasta com o número da versão, por exemplo 1.5.0.
+Entre nela. É ali que ficam os dois arquivos:
+
+   preferencias.ini    seus horários, a jornada e o tamanho da janela
+   estilo.ini          as cores e os textos do topo
+
+
+QUAL PASTA É A MINHA
+--------------------
+
+Se houver mais de uma pasta de versão, use a que corresponde ao programa
+que você abre. Para descobrir qual é:
+
+1. Clique com o botão direito no arquivo CES.exe.
+2. Escolha Propriedades.
+3. Vá na guia Detalhes.
+4. Olhe a linha "Versão do arquivo".
+
+Na dúvida, a pasta com a data mais recente costuma ser a certa.
+
+
+COMO EDITAR, PASSO A PASSO
+--------------------------
+
+1. Feche o CES. Se ele estiver aberto, o que você escrever não vai
+   valer, porque ele regrava o arquivo ao fechar.
+
+2. Abra a pasta, conforme explicado acima.
+
+3. Clique com o botão direito no arquivo que quer mudar, escolha
+   "Abrir com" e depois "Bloco de Notas".
+
+4. Faça a alteração.
+
+5. Salve com Ctrl + S e feche o Bloco de Notas.
+
+6. Abra o CES de novo. A mudança aparece na hora.
+
+As linhas que começam com ponto e vírgula são explicações. O programa
+não lê essas linhas, então você pode ignorá-las.
+
+
+MUDAR OS TEXTOS DO TOPO
+-----------------------
+
+No arquivo estilo.ini, procure estas duas linhas:
+
+   assinatura=Controle de Entradas e Saídas
+   origem=Nome da sua área ou equipe
+
+A primeira é o texto grande, ao lado da sigla CES. A segunda é o texto
+menor logo abaixo. O programa vem com "Nome da sua área ou equipe" ali
+só como exemplo: é para ser trocado pelo nome da sua área, da sua
+equipe ou da sua empresa. Por exemplo:
+
+   origem=Equipe de Suporte - Unidade Centro
+
+Escreva o que quiser depois do sinal de igual. Não apague o nome da
+linha nem o sinal de igual. Se deixar vazio depois do sinal de igual,
+o programa volta a mostrar o texto de exemplo.
+
+Cuidado com o tamanho. A primeira linha divide espaço com a sigla e com
+os botões de minimizar e fechar: cabem umas 38 letras. Se passar disso,
+o texto some por baixo dos botões. A segunda linha aceita mais.
+
+
+MUDAR AS CORES
+--------------
+
+Ainda no estilo.ini, cada cor é uma linha. Esta tabela diz o que cada
+uma pinta:
+
+   principal     a barra de cima, a borda da janela, o horário de
+                 saída previsto e o fundo das faixas de aviso
+   realce        o risco à esquerda, o campo onde você está digitando
+                 e a caixinha quando está marcada
+   fundo         o fundo da janela
+   cartao        o fundo branco dos campos
+   borda         o contorno dos campos
+   textoForte    o texto que você digita nos campos
+   textoSuave    os rótulos e a contagem regressiva
+   textoClaro    o texto sobre a barra escura
+   atencao       a contagem nos últimos 15 minutos
+   critico       o horário e a contagem depois que a jornada passou
+
+Os nomes das linhas não têm acento. É assim mesmo: são nomes que o
+programa procura, não texto para ler.
+
+A cor se escreve com um sustenido e seis caracteres, como #003641. É o
+mesmo formato usado na internet: procurando por "código hexadecimal de
+cores" você acha vários sites que mostram o código de qualquer cor.
+
+Se preferir, aqui vão algumas prontas para copiar:
+
+   preto      #000000        branco      #FFFFFF
+   cinza      #808080        cinza claro #E0E0E0
+   azul       #1F4E79        azul claro  #4A90D9
+   verde      #1E6B3A        verde claro #4CAF50
+   vermelho   #B3261E        laranja     #E08A11
+   roxo       #5B2333        marrom      #6D4C41
+
+Duas recomendações para o resultado não ficar ruim:
+
+   deixe textoClaro em branco e cartao em branco;
+   escolha atencao e critico bem diferentes de textoSuave, porque são
+   as cores que avisam que o horário está chegando ou já passou.
+
+
+MUDAR O INTERVALO MÍNIMO DE ALMOÇO
+----------------------------------
+
+No arquivo preferencias.ini há esta linha:
+
+   intervaloMinimo=01:00
+
+É o tempo mínimo de almoço. O programa não usa esse valor na conta da
+saída; ele serve só para avisar, em letra laranja, quando o intervalo
+que você informou for menor que isso.
+
+Quem faz jornada de seis horas costuma ter intervalo menor. Nesse caso
+mude para 00:15, por exemplo.
+
+Não mexa nas linhas versao e data desse arquivo. Elas são controle do
+programa.
+
+
+SE ALGO DER ERRADO
+------------------
+
+O programa é tolerante. Se uma linha ficar escrita errada, ele ignora
+aquela linha e usa o valor original dela. Não trava nem deixa de abrir.
+
+Para desfazer uma cor só, apague a linha dela e abra o programa de novo.
+
+Para voltar a aparência original inteira, apague o arquivo estilo.ini.
+Ele é criado de novo na próxima vez que você abrir o CES.
+
+Para voltar tudo ao estado de fábrica, apague a pasta da versão. Os dois
+arquivos são criados de novo.
+
+
+QUANDO CHEGAR UMA VERSÃO NOVA
+-----------------------------
+
+Cada versão usa a sua própria pasta. Isso quer dizer que uma versão nova
+começa do zero, com as cores e os textos originais.
+
+Se você quiser levar seus ajustes para a versão nova:
+
+1. Abra o programa novo uma vez e feche. Isso cria a pasta dele.
+2. Vá em %APPDATA%\CES e abra a pasta da versão antiga.
+3. Copie o arquivo estilo.ini.
+4. Cole dentro da pasta da versão nova, substituindo o que estiver lá.
+5. Abra o programa.
+
+Atenção: fazendo isso você leva junto os textos antigos do topo. Se o
+nome da área tiver mudado, edite as linhas assinatura e origem depois.
+
+
+O QUE NÃO DÁ PARA MUDAR POR AQUI
+--------------------------------
+
+As coisas abaixo estão dentro do programa e só mudam com quem cuida do
+código:
+
+   o tamanho das letras
+   a posição das coisas na janela
+   os avisos serem de 15, 10 e 5 minutos
+   os sons
+   o texto que aparece nas faixas de aviso
+   a forma de calcular o horário de saída
+
+Se precisar de alguma dessas, fale com quem te enviou o programa, ou
+peça na página do projeto:
+
+   github.com/juniormarorganista/CES-Controle-Entradas-Saidas

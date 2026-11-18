@@ -1,0 +1,177 @@
+﻿CES - CONTROLE DE ENTRADAS E SAÍDAS
+Versão 1.5.0
+
+Calculadora de horário de saída. Você informa os horários do dia e a sua
+carga horária, e o programa mostra a que horas a jornada se completa e
+avisa antes de o horário chegar.
+
+
+COMO ABRIR
+----------
+
+Não tem instalador. Copie o arquivo CES.exe para uma pasta qualquer do
+seu computador (a Área de Trabalho serve) e dê dois cliques.
+
+Na primeira vez o Windows provavelmente vai mostrar uma tela azul dizendo
+"O Windows protegeu o computador". Isso acontece com qualquer programa
+sem certificado digital pago e não indica problema com o arquivo.
+
+   1. Clique em "Mais informações"
+   2. Clique em "Executar assim mesmo"
+
+Isso só aparece na primeira execução.
+
+Se quiser que o programa abra sozinho junto com o Windows: pressione as
+teclas Windows + R ao mesmo tempo, digite  shell:startup  e pressione
+Enter. Vai abrir uma pasta. Copie um atalho do CES.exe para dentro dela.
+
+
+OS QUATRO CAMPOS
+----------------
+
+   ENTRADA      hora em que você começou o expediente
+   SAÍDA ALM.   hora em que saiu para o almoço
+   VOLTA ALM.   hora em que voltou do almoço
+   JORNADA      sua carga horária diária, normalmente 06:00 ou 08:00
+
+Atenção ao quarto campo: ele NÃO é um horário, é a duração da sua
+jornada. Quem usa 8 horas por dia digita 08:00 ali. Quem usa 6 horas
+digita 06:00.
+
+O programa calcula sozinho e mostra a SAÍDA PREVISTA em destaque, junto
+com quanto tempo ainda falta.
+
+
+DIGITAÇÃO
+---------
+
+Não precisa digitar os dois pontos.
+
+   Digitando  853    o campo completa  08:53
+   Digitando  1230   o campo completa  12:30
+   Digitando  8      e saindo do campo, vira  08:00
+
+As horas 00, 01 e 02 são o único caso que precisa de atenção: depois do
+1 o programa não tem como saber se você quis dizer 01:xx ou 1x:xx.
+Nesses casos digite os quatro números (0123 para 01:23) ou use os dois
+pontos mesmo (1:23), que continuam funcionando.
+
+   Tab ou Enter          vai para o próximo campo
+   Seta cima / baixo     soma ou tira um minuto
+   Delete                limpa o campo
+
+
+OS AVISOS
+---------
+
+Aparecem três avisos antes do fim da jornada: aos 15, aos 10 e aos 5
+minutos. Cada um surge numa faixa no alto da tela e some sozinho depois
+de alguns segundos, sem atrapalhar o que você estiver fazendo. Um clique
+fecha a faixa antes disso.
+
+No horário da saída o programa toca um alarme e mostra uma faixa
+vermelha avisando que dali em diante conta como hora extra. Há também
+alarme na hora marcada para sair para o almoço e na hora marcada para
+voltar.
+
+A caixinha na parte de baixo da janela desliga SOMENTE os três avisos de
+15, 10 e 5 minutos. O alarme da saída continua tocando, que é o motivo
+de o programa existir, e os dois do almoço também.
+
+
+O SOM
+-----
+
+Os toques usam os sons do próprio Windows, então acompanham o volume do
+sistema: dá para abaixar ou deixar no mudo como em qualquer outro
+programa. Isso ajuda em sala com mais gente.
+
+A contagem dos minutos toca uma batida. Os alarmes do almoço e da saída
+tocam duas, para você distinguir sem olhar para a tela.
+
+O som para junto com a faixa: quando ela some sozinha, ou quando você
+clica nela.
+
+Se quiser trocar o som, abra o Painel de Controle, vá em Som e depois na
+aba Sons. A contagem usa o evento "Exclamation" e os alarmes usam
+"Critical Stop" (em alguns Windows aparecem traduzidos, como
+"Exclamação" e "Parada Crítica").
+
+
+QUANDO O ALARME NÃO TOCA
+------------------------
+
+Os horários têm uma tolerância de dois minutos. Passado esse tempo o
+alarme não sai mais. É o que evita que abrir o programa no fim da tarde
+dispare de uma vez o alarme do almoço e o da saída.
+
+Isso vale também com o programa aberto: se o computador estiver
+suspenso, ou a tampa fechada, na hora da saída e só voltar mais de dois
+minutos depois, o alarme não toca. O cálculo não se perde, só o som: a
+situação aparece na janela, em vermelho, com o tempo que passou.
+
+
+DETALHES QUE AJUDAM
+-------------------
+
+A janela fica sempre visível sobre as outras. Para tirar da frente, use
+o botão de minimizar.
+
+Para mover a janela, arraste pela barra verde de cima. A posição fica
+guardada.
+
+Para mudar o tamanho, arraste o canto inferior direito, onde ficam três
+risquinhos. As letras aumentam e diminuem junto, então quem achar a
+fonte pequena é só puxar o canto. O tamanho também fica guardado.
+
+Os horários do dia são lembrados se você fechar e abrir de novo no mesmo
+dia. No dia seguinte o programa começa com os valores padrão. A jornada
+e a posição da janela valem para sempre.
+
+Abrir o programa uma segunda vez não cria outra janela: ele traz de
+volta a que já estava aberta.
+
+As configurações ficam em dois arquivos de texto na sua pasta de
+usuário:
+
+   %APPDATA%\CES\1.5.0\preferencias.ini
+   %APPDATA%\CES\1.5.0\estilo.ini
+
+O primeiro guarda seus horários e o tamanho da janela, o segundo as
+cores e o texto do cabeçalho.
+
+Para chegar lá: Windows + R, digite  %APPDATA%\CES  e pressione Enter.
+
+A pasta tem o número da versão. Cada versão do programa usa a sua, então
+ao receber uma versão nova os ajustes começam do zero.
+
+Para zerar tudo, feche o programa e apague a pasta da versão. Ela é
+criada de novo na próxima vez que você abrir.
+
+
+REQUISITOS
+----------
+
+Windows 10 versão 1903 ou mais novo, ou Windows 11. Não precisa instalar
+nada além do próprio programa.
+
+
+PARA MUDAR CORES E TEXTOS
+-------------------------
+
+O arquivo COMO-AJUSTAR.txt, que veio junto com este, explica passo a
+passo o que dá para mudar sem precisar de nada além do programa: as
+cores da janela, os dois textos do topo e o intervalo mínimo de almoço.
+
+O texto "Nome da sua área ou equipe", na segunda linha do topo, é só um
+exemplo. A ideia é trocar pelo nome da sua área, equipe ou empresa.
+
+
+PROBLEMAS
+---------
+
+Se o antivírus bloquear ou o programa não abrir, fale com quem te
+enviou o programa. Também dá para relatar o problema na página do
+projeto:
+
+   github.com/juniormarorganista/CES-Controle-Entradas-Saidas
