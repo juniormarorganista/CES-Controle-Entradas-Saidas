@@ -1,0 +1,15 @@
+# Compilados
+*.obj
+*.pdb
+
+# IDEs e editores
+.idea/
+.vs/
+.vscode/
+
+# Sistema operacional
+Thumbs.db
+desktop.ini
+
+# Pacote de entrega: vai para a página de releases, não para o Git
+dist/*.zip
